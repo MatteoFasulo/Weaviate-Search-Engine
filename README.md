@@ -1,3 +1,10 @@
+<img alt='Streamlit logo' src='https://upload.wikimedia.org/wikipedia/commons/7/77/Streamlit-logo-primary-colormark-darktext.png' width='260' align='left' />
+<img alt='Weaviate logo' src='https://weaviate.io/img/site/weaviate-logo-light.png' width='160' align='right' />
+<br>
+<br>
+<br>
+<br>
+
 # Weaviate Image Search Engine
 Vector database (Weaviate) to build an image search engine powered by a deep neural network. It uses Weaviate optimizer for images with **ResNet50 (PyTorch)** as vectorizer and retriever. Currently only PyTorch ResNet50 supports **CUDA-GPU** but in a **single-threaded** manner. You can also use the **keras-based ResNet50 CPU** with **multi-threaded** inference.
 
