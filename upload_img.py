@@ -17,14 +17,14 @@ def set_up_batch():
         callback=None,
     )
     
-def clear_up_meme():
+def clear_up_MyImages():
     """
-    Remove all objects from the Meme collection.
+    Remove all objects from the MyImages collection.
     This is useful, if we want to rerun the import with different pictures.
     """
     with client.batch as batch:
         batch.delete_objects(
-            class_name="Meme",
+            class_name="MyImages",
             # same where operator as in the GraphQL API
             where={
                 "operator": "NotEqual",
@@ -36,7 +36,7 @@ def clear_up_meme():
 
 def import_data():
     """
-    Process all images in [base64_images] folder and add import them into Meme collection
+    Process all images in [base64_images] folder and add import them into MyImages collection
     """
 
     with client.batch as batch:
@@ -60,11 +60,11 @@ def import_data():
                 "text": image_file,
             }
 
-            batch.add_data_object(data_properties, "Meme")
+            batch.add_data_object(data_properties, "MyImages")
 
 client = weaviate.Client(url = "http://localhost:8080")
 set_up_batch()
-clear_up_meme()
+clear_up_MyImages()
 import_data()
 
 print("The objects have been uploaded to Weaviate.")

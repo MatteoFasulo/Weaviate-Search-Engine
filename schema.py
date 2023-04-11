@@ -28,6 +28,8 @@ schemaConfig = {
     ]
 }
 
-client.schema.create_class(schemaConfig)
-
-print("Schema defined")
+try:
+    client.schema.create_class(schemaConfig)
+    print("Schema defined")
+except Exception:
+    print("Schema already defined, skipping...")

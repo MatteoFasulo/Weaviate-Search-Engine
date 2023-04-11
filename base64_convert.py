@@ -1,4 +1,5 @@
 import os 
+import shutil
 
 def b64_images():
     base_folder = "b64_img"
