@@ -12,9 +12,9 @@ curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
 docker compose up -d
 ```
 
-3. Install `requirements.txt`:
+3. Activate the environment:
 ```sh
-pip3 install -r requirements.txt
+apt install pipenv && pipenv install && pipenv shell
 ```
 
 4. Launch `start.sh` script to create Weaviate schema, convert images from `img` folder to base64 and upload them in Weaviate:
@@ -25,6 +25,11 @@ pip3 install -r requirements.txt
 5. Navigate to URL that streamlit outputs and upload an image. The program will query Weaviate for a vectorized search of similar images. If you are running this in local environment then just navigate at:
 ```
 http://127.0.0.1:8501/
+```
+
+6. (Optional) CORS and XsrfProtection Streamlit. Run this if you have **Socket Errors** while connecting to streamlit app URL:
+```
+streamlit run streamlit_app.py --server.enableCORS false --server.enableXsrfProtection false
 ```
 
 ## Images
