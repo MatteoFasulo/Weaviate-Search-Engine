@@ -26,7 +26,7 @@ docker compose up -d
 
 3. Activate the environment:
 ```sh
-apt install pipenv && pipenv install && pipenv shell
+pip3 install pipenv && pipenv install && pipenv shell
 ```
 
 4. Launch `start.sh` script to create Weaviate schema, convert images from `img` folder to base64 and upload them in Weaviate:
