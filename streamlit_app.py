@@ -13,12 +13,12 @@ def search_img(img_str):
     sourceImage = { "image": img_str}
 
     weaviate_results = client.query.get(
-        "Meme", ["text", "image"]
+        "MyImages", ["text", "image"]
         ).with_near_image(
             sourceImage, encode=False
         ).with_limit(2).do()
 
-    return weaviate_results["data"]["Get"]["Meme"]
+    return weaviate_results["data"]["Get"]["MyImages"]
 
 def on_file_change(**kwargs):
     """
